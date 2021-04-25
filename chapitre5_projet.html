@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+	<meta content="text/css" http-equiv=Content-Style-Type>
+	<meta content=en http-equiv=Content-Language>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css <view-source:https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css>"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		body {
+
+			list-style: none;
+
+			text-rendering: optimizeLegibility;
+			font-family: "Times New Roman", Times, Cambria, serif;
+			font-size: 13px;
+			line-height: 22px;
+			/* color: #333; */
+
+			height: 2000px;
+			margin: 0;
+			background-image: url("images/grille.png");
+			background-color: #dad6d6
+		}
+
+
+		.grid-container {
+			height: 80%;
+			width: 70%;
+			margin: auto;
+		}
+
+		.grid-container {
+
+
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			gap: 10px 10px;
+			grid-template-areas:
+				"header header header header"
+				"biography journal archives emails"
+				"milieu milieu milieu milieu"
+				"kin adventures photographs twitter"
+				"profile j k l"
+				"m n o p"
+				"q r s t"
+				"bas bas bas bas"
+				"footer footer footer footer";
+			/* laisser? */
+			align-content: center;
+		}
+
+		.header {
+			grid-area: header;
+			background: url("images/top.png") no-repeat;
+		}
+
+		/* .biography { grid-area: biography; }
+
+	.journal { grid-area: journal; }
+
+	.archives { grid-area: archives; }
+
+	.emails { grid-area: emails; } */
+
+		.milieu {
+			grid-area: milieu;
+			background: url("images/middle.png") no-repeat;
+		}
+
+		/* .kin { grid-area: kin; }
+
+	.adventures { grid-area: adventures; }
+
+	.photographs { grid-area: photographs; }
+
+	.twitter { grid-area: twitter; }
+
+	.profile { grid-area: profile; }
+ */
+		/* ne servent à à rien finalement? */
+
+		/* .j { grid-area: j; } */
+
+		/* .k { grid-area: k; } */
+
+		/* .l { grid-area: l; } */
+
+		/* .m { grid-area: m; } */
+
+		/* .n { grid-area: n; } */
+
+		/* .o { grid-area: o; } */
+
+		/* .p { grid-area: p; } */
+
+		/* .q { grid-area: q; } */
+
+		/* .r { grid-area: r; } */
+
+		/* .s { grid-area: s; } */
+
+		/* .t { grid-area: t; } */
+
+		.bas {
+			grid-area: bas;
+			background: url("images/bottom.png") no-repeat;
+		}
+
+		/* .footer { grid-area: footer;background:url("images/footer.png") no-repeat;} */
+
+
+		.footer {
+			grid-area: footer;
+		}
+
+
+		/* For presentation only, no need to copy the code below */
+		.grid-container * {
+			/* border: 1px solid rgb(241, 239, 239); */
+			position: relative;
+			background-position: center;
+			background-color: rgb(245, 247, 250);
+			-webkit-border-radius: 5px;
+		}
+
+		.grid-container *:after {
+			/* content:attr(class); */
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-top: 5px;
+		}
+
+		.intro {
+			display: block;
+			text-align: center;
+			font-style: italic;
+			color: #999;
+			margin-top: 5px;
+		}
+
+		.titre {
+			display: block;
+			text-align: center;
+			padding: 2px 0 105px 0;
+			font-size: 12px;
+			font-weight: normal;
+			font-style: normal;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #000;
+
+		}
+
+		.biography span.titre {
+			background: url(images/cochon.png) no-repeat center bottom;
+		}
+
+		.journal span.titre {
+			background: url(images/papillon.png) no-repeat center bottom;
+		}
+
+		.archives span.titre {
+			background: url(images/poisson.png) no-repeat center bottom;
+		}
+
+		.emails span.titre {
+			background: url(images/crabe.png) no-repeat center bottom;
+		}
+
+		.kin span.titre {
+			background: url(images/scarab.png) no-repeat center bottom;
+		}
+
+		.adventures span.titre {
+			background: url(images/fugu.png) no-repeat center bottom;
+		}
+
+		.photographs span.titre {
+			background: url(images/poux.png) no-repeat center bottom;
+		}
+
+		.twitter span.titre {
+			background: url(images/salamandre.png) no-repeat center bottom;
+		}
+
+		.profile span.titre {
+			background: url(images/criquet.png) no-repeat center bottom;
+		}
+
+		.fm span.titre {
+			background: url(images/gardon.png) no-repeat center bottom;
+		}
+
+		.shots span.titre {
+			background: url(images/lezard.png) no-repeat center bottom;
+		}
+
+		.photos span.titre {
+			background: url(images/perche.png) no-repeat center bottom;
+		}
+
+		.rdioprofile span.titre {
+			background: url(images/lievre.png) no-repeat center bottom;
+		}
+
+		.facebook span.titre {
+			background: url(images/vipere.png) no-repeat center bottom;
+		}
+
+		.bar span.titre {
+			background: url(images/bee.png) no-repeat center bottom;
+		}
+
+		.checkins span.titre {
+			background: url(images/dodo.png) no-repeat center bottom;
+		}
+
+		.deck span.titre {
+			background: url(images/homard.png) no-repeat center bottom;
+		}
+
+		.scrobbles span.titre {
+			background: url(images/collie.png) no-repeat center bottom;
+		}
+
+		.zerplyprofile span.titre {
+			background: url(images/fishduck.png) no-repeat center bottom;
+		}
+
+		.channel span.titre {
+			background: url(images/turtle.png) no-repeat center bottom;
+		}
+
+		.titre span {
+			font-size: 15px;
+		}
+
+		.fl {
+			float: left;
+			margin: 12px 4px 0 0;
+			padding: 0;
+			font-size: 65px;
+			line-height: 62%;
+			color: #ba1820;
+		}
+
+		.descr {
+			color: #ba1820;
+		}
+
+		.header,
+		.milieu,
+		.bas,
+		.footer {
+			background-color: transparent;
+			border: none;
+		}
+
+		.footer p {
+			background-color: transparent;
+			border: none;
+			text-align: center;
+			color: #999;
+		}
+
+		.footer a {
+			background-color: transparent;
+			text-decoration: underline;
+			color: #beb2b2;
+		}
+
+
+		
+		
+	</style>
+	<title>Page web</title>
+</head>
+
+<body>
+	<div class="grid-container">
+		<div class="header"></div>
+		<div class="biography">
+			<span class="intro">Bottled for your pleasure</span>
+			<span class="titre"><span>P</span>OTTED <span>A</span>UTOBIOGRAPHY</span>
+			<span class="fl">H</span>
+			<a class="descr">ello</a>
+			. I'm a designer. I also do plenty of writing, speaking, and sleeping. I'm based in Nottingham, England, but
+			my work means I'm often found in all sorts of other fine places.
+			<a class="descr">Please read on →</a>
+		</div>
+		<div class="journal">
+			<span class="intro">Dropping science like it's hot</span>
+			<span class="titre"><span>T</span>HE <span>S</span>PLENDID <span>J</span>OURNAL</span>
+			<span class="fl">§</span>
+			<a class="descr">Meet little Americo</a>
+			Today I received my first photo of Americo, a 12 year old boy from a poor village near Cusco, Peru. I’ll be
+			sponsoring him until he’s old enough to take care…
+			<a class="descr">More →</a>
+		</div>
+
+		<div class="archives">
+			<span class="intro">Catalogued nocturnal matter</span>
+			<span class="titre"><span>E</span>XHAUSTIVE <span>A</span>RCHIVES</span>
+			<a class="descr">847—When we build</a><br>
+			<a class="descr">846—Relly’s New Adventures…</a><br>
+			<a class="descr">845—New Adventures newspaper…</a><br>
+			<a class="descr">844—We are the explorers</a><br>
+			<a class="descr">843—Another year in review</a>
+		</div>
+
+
+		<div class="emails">
+			<span class="intro">Mr. Collison is currently</span>
+			<span class="titre"><span>R</span>ECEIVING <span>Y</span>OUR <span>E</span>MAILS</span>
+			<span class="fl">O</span>
+			<a class="descr">pinions & queries this way</a>
+			Drop me a line if you wish. I'm always interested in new projects and opportunities and will of course do my
+			best to reply to your emails
+			swiftly and efficiently.
+			<a class="descr">More →</a>
+		</div>
+
+		<div class="milieu"></div>
+
+
+		<div class="kin">
+			<span class="intro">A very proud member of those</span>
+			<span class="titre"><span>F</span>ICTIVE <span>K</span>IN</span>
+		</div>
+
+		<div class="adventures">
+			<span class="intro">Mr. Collison organises some</span>
+			<span class="titre"><span>N</span>EW <span>A</span>DVENTURES</span>
+		</div>
+
+		<div class="photographs">
+			<span class="intro">Images from the field</span>
+			<span class="titre"><span>F</span>LICKR <span>P</span>HOTOGRAPHS</span>
+		</div>
+
+		<div class="twitter">
+			<span class="intro">The tweets of @colly</span>
+			<span class="titre"><span>F</span>OLLOW <span>M</span>E <span>O</span>N <span>T</span>WITTER</span>
+		</div>
+
+		<div class="profile">
+			<span class="intro">Conference and speaking history</span>
+			<span class="titre"><span>L</span>ANYRD <span>P</span>ROFILE</span>
+		</div>
+
+		<div class="fm">
+			<span class="intro">Bringing fans and bands together</span>
+			<span class="titre"><span>R</span>USHMORE <span>F</span>M</span>
+		</div>
+
+		<div class="shots">
+			<span class="intro">Sneaky-peeks at my designs</span>
+			<span class="titre"><span>D</span>RIBBBLE <span>S</span>HOTS</span>
+		</div>
+
+		<div class="photos">
+			<span class="intro">Retro-filtered iPhone Photos</span>
+			<span class="titre"><span>I</span>NSTAGRAM <span>P</span>HOTOS</span>
+		</div>
+
+		<div class="rdioprofile">
+			<span class="intro">Streaming day and night</span>
+			<span class="titre"><span>R</span>DIO <span>P</span>ROFILE</span>
+		</div>
+
+		<div class="facebook">
+			<span class="intro">Ignoring old acquaintances</span>
+			<span class="titre"><span>B</span>LOODY <span>F</span>ACEBOOK</span>
+		</div>
+
+		<div class="bar">
+			<span class="intro">Collected internet oddments</span>
+			<span class="titre"><span>G</span>IMME <span>B</span>AR</span>
+		</div>
+
+		<div class="checkins">
+			<span class="intro">I've been, therefore I am</span>
+			<span class="titre"><span>F</span>OURSQUARE <span>C</span>HECKINS</span>
+
+		</div>
+
+		<div class="deck">
+			<span class="intro">Slides from my presentations</span>
+			<span class="titre"><span>S</span>PEAKER <span>D</span>ECK</span>
+		</div>
+
+		<div class="scrobbles">
+			<span class="intro">Playing on the gramophone</span>
+			<span class="titre"><span>L</span>AST.FM <span>S</span>CROBBLES</span>
+		</div>
+
+		<div class="zerplyprofile">
+			<span class="intro">It's better then Linkedin y'know</span>
+			<span class="titre"><span>Z</span>ERPLY <span>P</span>ROFILE</span>
+		</div>
+
+		<div class="channel">
+			<span class="intro">Amateurish moving pictures</span>
+			<span class="titre"><span>V</span>IMEO <span>C</span>HANNEL</span>
+		</div>
+
+		<div class="bas"></div>
+
+		<div class="footer">
+			<p>Copyright © Mr. Simon Collison 2003-2012. Protected and licensed under a
+				<a>Commons License</a>. Grab the <a>RSS feed</a>
+			</p>
+			<p>Engineered in Nottingham, scaffolded by <a>ExpressionEngine</a>, steam-pumped by <a>United</a> & kept
+				alive with tea and roll-ups.</p>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
