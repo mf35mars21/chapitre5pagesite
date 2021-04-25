@@ -5,36 +5,23 @@
 	<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
 	<meta content="text/css" http-equiv=Content-Style-Type>
 	<meta content=en http-equiv=Content-Language>
-	<link rel="stylesheet"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css <view-source:https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css>"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css?v=1.0">	
 	<style>
-		body {
-
+		body {			
 			list-style: none;
-
-			text-rendering: optimizeLegibility;
-			font-family: "Times New Roman", Times, Cambria, serif;
-			font-size: 13px;
-			line-height: 22px;
-			/* color: #333; */
-
-			height: 2000px;
-			margin: 0;
+			font-size: 14px;
+			line-height: 21px;
+			height: 1800px;
+			margin: auto;
 			background-image: url("images/grille.png");
 			background-color: #dad6d6
 		}
-
-
+		
 		.grid-container {
+			min-width:800px; max-width: 1100px;
 			height: 80%;
-			width: 70%;
-			margin: auto;
-		}
-
-		.grid-container {
-
-
+			width: 70%;			
+			margin: auto;	
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -44,19 +31,34 @@
 				"biography journal archives emails"
 				"milieu milieu milieu milieu"
 				"kin adventures photographs twitter"
-				"profile j k l"
+				"profile fm shots photos"
+				"rdioprofile facebook bar checkins"
+				"deck scrobbles zerplyprofile channel"
+				"bas bas bas bas"
+				"footer footer footer footer";
+		}
+
+/* ou comme construit avec https://grid.layoutit.com/ car pas de différence! */
+			/* grid-template-areas:	
+				"header header header header"
+				"a b c d"
+				"milieu milieu milieu milieu"
+				"e f g h"
+				"i j k l"
 				"m n o p"
 				"q r s t"
 				"bas bas bas bas"
 				"footer footer footer footer";
-			/* laisser? */
-			align-content: center;
-		}
+		} */		
+
 
 		.header {
 			grid-area: header;
-			background: url("images/top.png") no-repeat;
+			background: url("images/top.png") no-repeat;			
 		}
+
+
+/* placés en commentaire car ne semblent pas apporter quoi que ce soit de plus! */
 
 		/* .biography { grid-area: biography; }
 
@@ -81,8 +83,7 @@
 
 	.profile { grid-area: profile; }
  */
-		/* ne servent à à rien finalement? */
-
+		
 		/* .j { grid-area: j; } */
 
 		/* .k { grid-area: k; } */
@@ -116,19 +117,15 @@
 		.footer {
 			grid-area: footer;
 		}
-
-
-		/* For presentation only, no need to copy the code below */
-		.grid-container * {
-			/* border: 1px solid rgb(241, 239, 239); */
+		
+		.grid-container * {			
 			position: relative;
 			background-position: center;
 			background-color: rgb(245, 247, 250);
 			-webkit-border-radius: 5px;
 		}
 
-		.grid-container *:after {
-			/* content:attr(class); */
+		.grid-container *:after {			
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -146,13 +143,8 @@
 		.titre {
 			display: block;
 			text-align: center;
-			padding: 2px 0 105px 0;
-			font-size: 12px;
-			font-weight: normal;
-			font-style: normal;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: #000;
+			padding: 2px 0 105px 0;			
+			color: black;
 
 		}
 
@@ -237,7 +229,7 @@
 		}
 
 		.titre span {
-			font-size: 15px;
+			font-size: 18px;
 		}
 
 		.fl {
@@ -246,17 +238,14 @@
 			padding: 0;
 			font-size: 65px;
 			line-height: 62%;
-			color: #ba1820;
+			color: rgb(182, 6, 6);
 		}
 
 		.descr {
-			color: #ba1820;
+			color:rgb(182, 6, 6);
 		}
 
-		.header,
-		.milieu,
-		.bas,
-		.footer {
+		.header,.milieu,.bas,.footer {
 			background-color: transparent;
 			border: none;
 		}
